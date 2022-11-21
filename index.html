@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cartão Interativo</title>
+    <link rel="stylesheet" href="css/style/style.css">
+</head>
+<body>
+    <div class="container">
+        <section class="leftSide">
+            <div class="cards">
+                <div class="frontCard">
+                    <img class="cardFront" src="css/images/bg-card-front.png" alt="Front of Card">
+                    <div class="cardContainer">
+                        <img src="css/images/card-logo.svg" alt="logo" class="logo">
+                        <h1 id="numberCard">0000 0000 0000 0000</h1>
+                        <div class="cardInfo">
+                            <span id="name">Jane Appleseed</span>
+                            <span id="date">
+                                <span id="mounth">00</span>
+                                <span id="year">00</span>
+                            </span>
+                        </div>
+                    </div> 
+                </div>
+
+                <div class="backCard">
+                    <img class="cardBack" src="css/images/bg-card-back.png" alt="Back of Card">
+                    <span id="cvc">000</span>
+                </div>
+            </div>
+        </section>
+
+         <section class="rightSide">
+            <div class="container_right">
+                <label for="numero"><strong>Número no seu Cartão</strong></label>
+                <input type="number" 
+                   oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)" 
+                   minLength="16"
+                   maxLength="16"
+                   name="numero" 
+                   id="numberbox" 
+                   placeholder="e.g. 1234 5678 9123 0000"
+                   required />
+                <label for="nome"><strong>Nome no seu Cartão</strong></label>
+                <input type="text" name="nome" id="namebox" placeholder="nome" required />
+            
+                <label for="data"><strong>EXP. DATE (MM/YY)</strong></label>
+                <input type="number"
+                   oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)" 
+                   minLength="2"
+                   maxLength="2" 
+                   name="dateMonth" 
+                   id="monthBox" 
+                   placeholder="MM"
+                   required />
+                <input type="number"
+                   oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)" 
+                   minLength="2"
+                   maxLength="2" 
+                   name="dateYear" 
+                   id="yearBox" 
+                   placeholder="YY"
+                   required />
+                <label for="CVC"><strong>CVC</strong></label>
+                <input type="number"
+                   oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)" 
+                   minLength="3"
+                   maxLength="3" 
+                   name="secCode" 
+                   id="cvc" 
+                   placeholder="e.g. 123"
+                   required />
+                </div>
+            <button type="submit" id="btn" class="button">Confirm</button>
+            <div class="thankHidden">
+                <img src="css/images/icon-complete.svg" alt="completed">
+                <h1>Thank You!</h1>
+                <p>We've added your card details</p>
+                <button>Continue</button>
+            </div>
+        </section>
+    </div>
+<script src="js/script.js"></script>
+</body>
+</html>

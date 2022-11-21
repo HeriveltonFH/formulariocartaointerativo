@@ -1,0 +1,142 @@
+@import url(https://fonts.google.com/specimen/Space+Grotesk);
+
+:root {
+    --Red: hsl(0, 100%, 66%);
+    --White: hsl(0, 0%, 100%);
+    --Light-graish-violet: hsl(270, 3%, 87%);
+    --dark-graish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+*,*>*{
+    font-family: 'Space Grotesk', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.thankHidden {
+    display: none;
+}
+
+.error {
+    border: 2px solid var(--Red);
+}
+
+.errorMessage {
+    gap: 0;
+}
+
+.errorMessage::after{
+    content: "can't be blank";
+    color: var(--Red);
+    margin-top: .2rem;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.leftSide {
+    min-height: 100vh;
+    width: 40%;
+    background-image: url("../images/bg-main-desktop.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.cards {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    left: 100%;
+    transform: translate(-50%,-50%);
+}
+
+.frontCard {
+    position: relative;
+    transform: translateX(-100px);
+}
+
+.logo {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+#numberCard {
+    position: absolute;
+    color: var(--White);
+    bottom: 5rem;
+    left: 1rem;
+    letter-spacing: 2px;
+}
+
+.cardInfo {
+    position: absolute;
+    bottom: 2rem;
+    left: 1rem;
+    right: 3rem;
+    display: flex;
+    color: var(--White);
+    justify-content: space-between;
+}
+
+.backCard {
+    position: relative;
+}
+
+#cvc {
+    position: absolute;
+    right: 3.5rem;
+    top: 7rem;
+    color: var(--light-grayish-violet);
+}
+
+.rightSide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.rightSide form {
+    display: grid;
+    gap: 1rem;
+    width: 350px;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(4,1fr);
+}
+
+label {
+    color: var(--very-dark-violet);
+    margin-bottom: .3rem;
+    text-transform: uppercase;
+}
+
+input {
+    padding: .5rem;
+    font-size: 18px;
+    border: 1px solid var(--dark-graish-violet);
+    border-radius: 6px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input::placeholder{
+    font-family: inherit;
+    color: var(--Dark-grayish-violet);
+}
