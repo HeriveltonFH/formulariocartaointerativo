@@ -19,7 +19,7 @@
                         <div class="cardInfo">
                             <span id="name">Jane Appleseed</span>
                             <span id="date">
-                                <span id="mounth">00</span>
+                                <span id="month">00</span>
                                 <span id="year">00</span>
                             </span>
                         </div>
@@ -33,53 +33,67 @@
             </div>
         </section>
 
-         <section class="rightSide">
+        <section class="rightSide">
             <div class="container_right">
-                <label for="numero"><strong>Número no seu Cartão</strong></label>
-                <input type="number" 
-                   oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)" 
-                   minLength="16"
-                   maxLength="16"
-                   name="numero" 
-                   id="numberbox" 
-                   placeholder="e.g. 1234 5678 9123 0000"
-                   required />
-                <label for="nome"><strong>Nome no seu Cartão</strong></label>
-                <input type="text" name="nome" id="namebox" placeholder="nome" required />
-            
-                <label for="data"><strong>EXP. DATE (MM/YY)</strong></label>
-                <input type="number"
-                   oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)" 
-                   minLength="2"
-                   maxLength="2" 
-                   name="dateMonth" 
-                   id="monthBox" 
-                   placeholder="MM"
-                   required />
-                <input type="number"
-                   oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)" 
-                   minLength="2"
-                   maxLength="2" 
-                   name="dateYear" 
-                   id="yearBox" 
-                   placeholder="YY"
-                   required />
-                <label for="CVC"><strong>CVC</strong></label>
-                <input type="number"
-                   oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)" 
-                   minLength="3"
-                   maxLength="3" 
-                   name="secCode" 
-                   id="cvc" 
-                   placeholder="e.g. 123"
-                   required />
-                </div>
-            <button type="submit" id="btn" class="button">Confirm</button>
-            <div class="thankHidden">
-                <img src="css/images/icon-complete.svg" alt="completed">
-                <h1>Thank You!</h1>
-                <p>We've added your card details</p>
-                <button>Continue</button>
+                <form>
+                    <div class="grid_1">
+                        <label for="numero"><strong>Número no seu Cartão</strong></label>
+                        <input type="number" 
+                            oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)" 
+                            minLength="16"
+                            maxLength="16"
+                            name="numero" 
+                            id="numberBox" 
+                            placeholder="e.g. 1234 5678 9123 0000"
+                            required />
+                    </div>
+                    <div class="grid_2">
+                        <label for="nome"><strong>Nome no seu Cartão</strong></label>
+                        <input type="text" name="nome" id="nameBox" placeholder="nome" required />
+                    </div>
+                    <div class="cardInformation">
+                        <div class="cardDate">
+                            <label for="data"><strong>EXP. DATE (MM/YY)</strong></label>
+                            <input type="number"
+                                oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)" 
+                                minLength="2"
+                                maxLength="2" 
+                                name="dateMonth" 
+                                id="monthBox" 
+                                placeholder="MM"
+                                required />
+                        </div>
+                        <input type="number"
+                            oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)" 
+                            minLength="2"
+                            maxLength="2" 
+                            name="dateYear" 
+                            id="yearBox" 
+                            placeholder="YY"
+                            required />
+                        <div class="grid_3">
+                            <label for="cardCvc"><strong>CVC</strong></label>
+                            <input type="number"
+                                oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)" 
+                                minLength="3"
+                                maxLength="3" 
+                                name="secCode" 
+                                id="cardCvc"                
+                                placeholder="e.g. 123"
+                                required />
+                        </div>
+                    </div>
+    
+                    <div id="hiddenAppears">
+                        <button type="submit" id="btn" class="button" onclick="appears('hiddenAppears')">Confirm</button>
+                    </div>
+                </form>
+                    <div class="thankHidden">
+                        <img src="css/images/icon-complete.svg" alt="completed">
+                        <h1>Thank You!</h1>
+                        <p>We've added your card details</p>
+                        <button>Continue</button>
+                    </div>
             </div>
         </section>
     </div>
